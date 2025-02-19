@@ -14,6 +14,10 @@ builder.Services.AddDbContext<ConnectionContext>(options =>
     options.UseNpgsql(builder.Configuration.GetConnectionString("DefaultConnection")));
 builder.Services.AddScoped<IRepositoryStudent, StudentRepository>();
 builder.Services.AddScoped<StudentService>();
+builder.Services.AddScoped<IRepositorySchoolTest, SchoolTestRepository>();
+builder.Services.AddScoped<SchoolTestService>();
+builder.Services.AddScoped<IRepositoryGrade, GradeRepository>();
+builder.Services.AddScoped<GradeService>();
 
 var app = builder.Build();
 
